@@ -1,9 +1,9 @@
-const DEFAULT_CANVAS_HEIGHT = 630;
-const DEFAULT_CANVAS_WIDTH = 1200;
-const DEFAULT_PADDING = 200;
+export const DEFAULT_CANVAS_HEIGHT = 630;
+export const DEFAULT_CANVAS_WIDTH = 1200;
+export const DEFAULT_PADDING = 200;
 
-const DEFAULT_FONT_SIZE = 100;
-const DEFAULT_TEXT = `
+export const DEFAULT_FONT_SIZE = 100;
+export const DEFAULT_TEXT = `
 Accepted query params:
  
 text(string): the text to be rendered
