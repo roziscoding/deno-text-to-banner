@@ -80,4 +80,4 @@ export function getOptions(url: string) {
   };
 }
 
-export type Options = ReturnType<typeof getOptions>;
+export type Options = ReturnType<typeof getOptions> & { font?: Uint8Array };

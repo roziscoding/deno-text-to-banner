@@ -62,7 +62,7 @@ function drawLines(
   let heightOffset = 0;
 
   ctx.fillStyle = "white";
-  ctx.font = `${fontSize}px Bryant`;
+  ctx.font = `${fontSize}px Default`;
 
   for (const line of lines) {
     const measurements = measure(line, fontSize);
@@ -116,7 +116,7 @@ export function drawText(
   drawLines(lines, { ...options, ctx, fontSize, font });
 
   if (debug) {
-    ctx.font = "15px Bryant";
+    ctx.font = "15px Default";
     const debugText = JSON.stringify({ fontSize, lines: lines.length });
     ctx.fillText(
       debugText,
@@ -139,7 +139,7 @@ function drawDebugInfo(canvas: EmulatedCanvas2D, ctx: CanvasRenderingContext2D, 
   ctx.stroke();
 
   ctx.fillStyle = "white";
-  ctx.font = "12px Bryant";
+  ctx.font = "12px Default";
   const { debug: _, text: _text, ...toDraw } = options;
   ctx.fillText(JSON.stringify(toDraw), 20, 20);
 }
@@ -154,9 +154,10 @@ export async function textToImage(options: Options) {
 
   const { canvas, ctx } = await prepareCanvas(canvasWidth, canvasHeight);
 
-  const font = await Deno.readFile("./font.otf");
+  const font = options.font || await Deno.readFile("./font.otf");
+
   canvas.loadFont(font, {
-    family: "Bryant",
+    family: "Default",
     style: "normal",
     weight: "normal",
     variant: "normal",
