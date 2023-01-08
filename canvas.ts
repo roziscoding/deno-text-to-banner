@@ -29,9 +29,7 @@ export async function drawBackground(
     return;
   }
 
-  const background = await loadImage(
-    new URL(backgroundUrl).toString(),
-  );
+  const background = await loadImage(backgroundUrl);
 
   ctx.drawImage(
     background,
