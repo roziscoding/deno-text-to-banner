@@ -8,5 +8,5 @@ serve(async (req) => {
   const options = getOptions(req.url);
   const image = await textToImage(options);
 
-  return new Response(image, { headers: { "Cache-Control": "max-age=31536000, immutable" } });
+  return new Response(image, { headers: { "Cache-Control": "max-age=31536000, immutable", "Content-Type": "image/png" } });
 });
